@@ -8,6 +8,7 @@ export const addTodo = text => {
 }
 
 export const removeTodo = id => {
+  console.log(id);
   return {
     type: 'REMOVE_TODO',
     id

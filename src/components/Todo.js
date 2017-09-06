@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Todo = ({ onClick, completed, text, id }) => (
+const Todo = ({ onClick, onClickRemove, completed, text, id }) => (
   <li
-    onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
-    {text}
-    <a href="#" > X {id} </a>
+    <span onClick={onClick}>{text}</span>
+    <a href="javascript:void(0)" onClick={() => onClickRemove(id)}> X {id} </a>
   </li>
 )
 
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
+  onClickRemove: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
 }
