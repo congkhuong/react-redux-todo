@@ -6,8 +6,9 @@ let AddTodo = ({ dispatch }) => {
   let input
 
   return (
-    <div>
+    <div className="container d-flex h-100">
       <form
+        className="row justify-content-center align-self-center"
         onSubmit={e => {
           e.preventDefault()
           if (!input.value.trim()) {
