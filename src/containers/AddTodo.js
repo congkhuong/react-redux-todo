@@ -6,7 +6,7 @@ let AddTodo = ({ dispatch }) => {
   let input
 
   return (
-    <div className="container d-flex h-100">
+    <div className="container p-3">
       <form
         className="row justify-content-center align-self-center"
         onSubmit={e => {
@@ -18,12 +18,14 @@ let AddTodo = ({ dispatch }) => {
           input.value = ''
         }}
       >
-        <input
-          ref={node => {
-            input = node
-          }}
-        />
-        <button type="submit">
+        <div className="form-group mb-0 mr-2">
+          <input className="form-control"
+            ref={node => {
+              input = node
+            }}
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
           Add Todo
         </button>
       </form>

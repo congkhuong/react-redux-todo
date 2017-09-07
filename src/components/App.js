@@ -13,8 +13,8 @@ const App = () => (
             <li className="nav-item">
               <a className="nav-link active" href="#">Overview <span className="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reports</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Reports</a>
             </li>
           </ul>
         </nav>

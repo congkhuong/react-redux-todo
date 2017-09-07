@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import Todo from './Todo'
 
 const TodoList = ({ todos, onTodoClick, removeTodo }) => (
-  <ul>
+  <div className="p-2">
     {todos.map(todo => (
       <Todo key={todo.id} {...todo} onClickRemove={removeTodo}  onClick={() => onTodoClick(todo.id)} />
     ))}
-  </ul>
+  </div>
 )
 
 TodoList.propTypes = {

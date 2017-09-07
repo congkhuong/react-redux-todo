@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Todo = ({ onClick, onClickRemove, completed, text, id }) => (
-  <li
+  <div className="alert alert-primary alert-dismissible fade show" role="alert"
     style={{
       textDecoration: completed ? 'line-through' : 'none'
-    }}
-  >
+    }}>
+    <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => onClickRemove(id)}>
+      <span aria-hidden="true">&times;</span>
+    </button>
     <span onClick={onClick}>{text}</span>
-    <a href="javascript:void(0)" onClick={() => onClickRemove(id)}> X {id} </a>
-  </li>
+  </div>
 )
 
 Todo.propTypes = {
