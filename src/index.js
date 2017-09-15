@@ -12,8 +12,12 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import todoApp from './reducers'
-import App from './components/App'
+//import App from './components/App'
 import 'bootstrap/dist/css/bootstrap.css';
+
+import { Router, browserHistory } from 'react-router';
+
+import getRoutes from './routes';
 
 let store = createStore(
 	todoApp,
@@ -22,7 +26,7 @@ let store = createStore(
 
 render(
   <Provider store={store}>
-    <App />
+    <Router history={browserHistory} routes={getRoutes()} />
   </Provider>,
   document.getElementById('root')
 )
