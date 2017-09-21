@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SideBar from '../../containers/SideBar'
 import PropTypes from 'prop-types';
+
+import './../../assets/css/styles.css';
 
 const AppLayout = (props) => (
   <div>

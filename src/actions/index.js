@@ -1,14 +1,12 @@
-let nextTodoId = 0
 export const addTodo = text => {
   return {
     type: 'ADD_TODO',
-    id: nextTodoId++,
+    id: Math.floor(Math.random() * (10000 - 10 + 1)) + 10,
     text
   }
 }
 
 export const removeTodo = id => {
-  console.log(id);
   return {
     type: 'REMOVE_TODO',
     id
@@ -28,3 +26,9 @@ export const toggleTodo = id => {
     id
   }
 }
+export const resetTodo = () => {
+  return {
+    type: 'RESET_TODO'
+  }
+}
+

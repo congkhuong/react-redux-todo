@@ -6,18 +6,18 @@ let SideBar = ({ dispatch }) => {
 
   return (
     <nav className="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar"  style={{ 'minWidth': '200px' }}>
-		  <ul className="nav nav-pills flex-column">
-		    <li className="nav-item">
-		    	<Link to="/" className="nav-link active">Overview <span className="sr-only">(current)</span></Link>
-		    </li>
-		    <li className="nav-item">
-		    	<Link to="/" className="nav-link">Reports</Link>
-		    </li>
-		    <li className="nav-item">
-		    	<Link to="/" className="nav-link">Reports2</Link>
-		    </li>
-		  </ul>
-		</nav>
+	  <ul className="nav nav-pills flex-column">
+	    <li className="nav-item">
+	    	<Link to="/" className="nav-link" activeClassName="active">Todo lists <span className="sr-only">(current)</span></Link>
+	    </li>
+	    <li className="nav-item">
+	    	<Link to="/about" className="nav-link " activeClassName="active">Reports</Link>
+	    </li>
+	    <li className="nav-item">
+	    	<Link to="/order-form" className="nav-link " activeClassName="active">Order Form</Link>
+	    </li>
+	  </ul>
+	</nav>
   )
 }
 SideBar = connect()(SideBar)

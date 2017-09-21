@@ -29,6 +29,8 @@ const todos = (state = iniState, action) => {
           ? {...todo, completed: !todo.completed}
           : todo
       )
+    case 'RESET_TODO':
+      return iniState;
     default:
       return state
   }

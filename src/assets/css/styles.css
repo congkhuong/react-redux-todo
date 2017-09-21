@@ -1,0 +1,18 @@
+.element {
+  color: #7B8585;
+  background-color: #F8F8F8;
+  padding: 8px 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.element:hover, .element.active {
+  background-color: #d8f2f1;
+}
+.element.total {
+  background: transparent;
+  cursor: auto;
+}
