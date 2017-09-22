@@ -16,6 +16,9 @@ let SideBar = ({ dispatch }) => {
 	    <li className="nav-item">
 	    	<Link to="/order-form" className="nav-link " activeClassName="active">Order Form</Link>
 	    </li>
+	    <li className="nav-item">
+	    	<Link to="/password-meter" className="nav-link " activeClassName="active">Password meter</Link>
+	    </li>
 	  </ul>
 	</nav>
   )
