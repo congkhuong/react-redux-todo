@@ -1,16 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+
 import { Container, Row, Col, Card, CardBlock, 
 	CardSubtitle, Progress,
 	Form, FormGroup, Label, Input  } from 'reactstrap';
-const DIGIT_REGEX = /[^A-Za-z0-9]/;
-const SPECIAL_CHARS_REGEX = /[0-9]/;
+const SPECIAL_CHARS_REGEX = /[^A-Za-z0-9]/;
+const DIGIT_REGEX = /[0-9]/;
 
 class PasswordContainer extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-    	password: null,
+    	password: '',
     }
   }
 
@@ -59,6 +61,19 @@ PasswordContainer.defaultProps = {
 
 
 class StrengthMeter extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.password = {
+      password: props.password || '',
+    }
+  }
+
+  getClass = (predicate) => {
+    const { password } = this.props;
+    return predicate(password) ? 'text-primary' : 'text-danger' ;
+  }
+
   render() { 
   	const { goodPasswordPrinciples } = this.props;
   	return (
@@ -68,7 +83,7 @@ class StrengthMeter extends React.Component {
           <CardSubtitle>A good password is:</CardSubtitle>
           <ul>
           	{goodPasswordPrinciples.map((item, i) => 
-          		<li key={i}> {item.label} </li> 
+          		<li key={i} className={this.getClass(item.predicate)}> {item.label} </li> 
           	)}
           </ul>
         </CardBlock>
@@ -76,6 +91,12 @@ class StrengthMeter extends React.Component {
   	)
   }
 }
+
+StrengthMeter.propTypes = {
+  password: PropTypes.string.isRequired,
+  goodPasswordPrinciples: PropTypes.array.isRequired,
+}
+
 
 class PasswordField extends React.Component {
   render() { 

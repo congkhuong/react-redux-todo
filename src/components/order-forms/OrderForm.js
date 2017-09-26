@@ -1,4 +1,5 @@
 import React from 'react'
+import Element from './Element'
 
 const services = [
     { id: 1, name: 'Web Development', price: 300 },
@@ -6,34 +7,6 @@ const services = [
     { id: 3, name: 'Integration', price: 250 },
     { id: 4, name: 'Training', price: 220 }
 ];
-
-class Element extends React.Component {
-	constructor(props) {
-    super(props);
-    this.state = {
-    	active: false
-    }
-  }
-
-  onClick = () => {
-  	const active = !this.state.active;
-  	this.setState({active: active});
-  	this.props.handleClick(this.props.price, active);
-	}
-
-  render() {
-  	return (
-  		<p 
-      	key={this.props.id}  
-      	className={this.state.active ? 'element active': 'element'} 
-      	onClick={this.onClick}> 
-      	<span>{this.props.name} </span>
-      	<span>{this.props.price} </span> 
-      </p>
-  	)
-  }
-}
-
 
 class OrderForm extends React.Component {
 	constructor(props) {
