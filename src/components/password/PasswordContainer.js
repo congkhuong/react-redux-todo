@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 
-import { Container, Row, Col, Card, CardBlock, 
-	CardSubtitle, Progress,
-	Form, FormGroup, Label, Input  } from 'reactstrap';
+import { Container, Row, Col  } from 'reactstrap';
 
 import StrengthMeter from './StrengthMeter'
 import PasswordField from './PasswordField'

@@ -1,0 +1,23 @@
+{
+  "extends": ["prettier", "airbnb"],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "prefer-stateless-function": "off",
+    "react/jsx-filename-extension": "off",
+    "no-param-reassign": "off",
+    "class-methods-use-this": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/anchor-has-content": "off",
+    "react/forbid-prop-types": ["error", { "forbid": [] }],
+    "jsx-a11y/href-no-hash": "off"
+  },
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true
+  }
+}
